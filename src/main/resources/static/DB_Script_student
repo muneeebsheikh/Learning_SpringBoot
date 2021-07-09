@@ -1,0 +1,35 @@
+-- Database: Student
+
+-- DROP DATABASE "Student";
+
+CREATE DATABASE "Student"
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_United States.1252'
+    LC_CTYPE = 'English_United States.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+GO;
+GRANT ALL ON DATABASE "Student" TO postgres;
+Go;
+GRANT TEMPORARY, CONNECT ON DATABASE "Student" TO PUBLIC;
+Go;
+
+
+CREATE TABLE IF NOT EXISTS public.student
+(
+    id integer NOT NULL DEFAULT nextval('"Student_id_seq"'::regclass),
+    name text COLLATE pg_catalog."default",
+    email text COLLATE pg_catalog."default",
+    dob date,
+    CONSTRAINT "Student_pkey" PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+Go;
+ALTER TABLE public.student
+    OWNER to postgres;
+Go;
