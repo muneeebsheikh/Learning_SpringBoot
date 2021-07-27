@@ -1,4 +1,4 @@
-# Learning_SpringBoot
+# Learning SpringBoot
 Learning Spring boot | Following Amigoscode tutorial
 
 Link to the Course:
